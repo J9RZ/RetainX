@@ -44,10 +44,7 @@ if Testing == false then
             TextLabel.Font = Enum.Font.GothamBlack
             TextLabel.Text = "RetainX Alt control"
             TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel.TextSize = 14.000
-
-
-	if not game:IsLoaded() then
+                        TextLabel.TextSize = 14.000if not game:IsLoaded() then
 		repeat wait(.1) until game:IsLoaded() 
 	end
 	local vu = game:GetService("VirtualUser")
@@ -57,7 +54,7 @@ TextLabel.TextSize = 14.000
 		vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
 	end)
 	game:GetService("RunService"):Set3dRenderingEnabled(false)
-	setfpscap(5)
+	setfpscap(1)
 end
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/MsorkyScripts/OpenSourceAntiCheat/main/AntiCheatBypass.txt"))()
@@ -699,4 +696,7 @@ Services["Players"].PlayerAdded:Connect(function(Player)
 		Initiate()
 	end
 end)
+
+If getgenv().fps then
+setfpscap()
 
