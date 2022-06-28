@@ -11,7 +11,6 @@ end
 UserSettings().GameSettings.MasterVolume = 0
 local Crashed = false
 if Testing == false then
-	
 	Frame = Instance.new("Frame")
 	ScreenGui.Parent = game.CoreGui
 
@@ -26,6 +25,23 @@ if Testing == false then
              ImageLabel.Position = UDim2.new(0.311862051, 0, 0.329323083, 0)
              ImageLabel.Size = UDim2.new(0, 100, 0, 100)
              ImageLabel.Image = "rbxasset://textures/ui/GuiImagePlaceholder.png"
+            local script = Instance.new('LocalScript', ImageLabel)
+
+            local Players = game:GetService("Players")
+    
+            local player = Players.LocalPlayer
+    
+            local userId = player.UserId
+            local thumbType = Enum.ThumbnailType.HeadShot
+            local thumbSize = Enum.ThumbnailSize.Size420x420
+            local content, isReady = Players:GetUserThumbnailAsync(userId, thumbType, thumbSize)
+    
+           local imageLabel = script.Parent
+           imageLabel.Image = content
+
+    
+           end
+
 
              TextLabel.Parent = Frame
              TextLabel.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
@@ -36,37 +52,17 @@ if Testing == false then
              TextLabel.Text = "RetainX Alt control"
              TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
              TextLabel.TextSize = 14.000
-
-
-local function WXTA_fake_script() -- ImageLabel.LocalScript 
-    local script = Instance.new('LocalScript', ImageLabel)
-
-    local Players = game:GetService("Players")
-    
-    local player = Players.LocalPlayer
-    
-    local userId = player.UserId
-    local thumbType = Enum.ThumbnailType.HeadShot
-    local thumbSize = Enum.ThumbnailSize.Size420x420
-    local content, isReady = Players:GetUserThumbnailAsync(userId, thumbType, thumbSize)
-    
-    local imageLabel = script.Parent
-    imageLabel.Image = content
-    
-end
-coroutine.wrap(WXTA_fake_script)()
-local function MKVYOG_fake_script() -- TextLabel.LocalScript 
-    local script = Instance.new('LocalScript', TextLabel)
+              local function MKVYOG_fake_script() -- TextLabel.LocalScript 
+              local script = Instance.new('LocalScript', TextLabel)
 
     
-    local player = game.Players.LocalPlayer
+              local player = game.Players.LocalPlayer
     
-    if player then
+               if player then
         script.Parent.Text = "Welcome to Retain X Alt control, "..player.Name..""
     end
     
 end
-coroutine.wrap(MKVYOG_fake_script)()
 wait()
 game:GetService("RunService"):Set3dRenderingEnabled(false)
                          if not game:IsLoaded() then
@@ -721,4 +717,5 @@ Services["Players"].PlayerAdded:Connect(function(Player)
 		Initiate()
 	end
 end)
+
 
