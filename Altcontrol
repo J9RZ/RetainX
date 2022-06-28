@@ -25,7 +25,7 @@ if Testing == false then
 	Frame.Parent = main
 	Frame.Active = true
 	Frame.AnchorPoint = Vector2.new(0.5, 0.5)
-	Frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+	Frame.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
 	Frame.Position = UDim2.new(0.5, 0, 0.5, 0)
 	Frame.Size = UDim2.new(1, 0, 1, 0)
 
@@ -35,8 +35,8 @@ if Testing == false then
 	TextLabel.BackgroundTransparency = 1.000
 	TextLabel.Position = UDim2.new(0.5, 0, 0.419999987, 0)
 	TextLabel.Size = UDim2.new(0, 279, 0, 34)
-	TextLabel.Font = Enum.Font.GothamBlack
-	TextLabel.Text = "Welcome, To Retain X Premium "..game.Players.LocalPlayer.Name
+	TextLabel.Font = Enum.Font.Gotham
+	TextLabel.Text = "Welcome to Retain X Alt control Premium, "..game.Players.LocalPlayer.Name 
 	TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
 	TextLabel.TextScaled = false
 	TextLabel.TextSize = 19.000
@@ -51,13 +51,17 @@ if Testing == false then
 		vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
 	end)
 	game:GetService("RunService"):Set3dRenderingEnabled(false)
-	setfpscap(1)
+	setfpscap1)
 end
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/MsorkyScripts/OpenSourceAntiCheat/main/AntiCheatBypass.txt"))()
 getgenv().Executed = true
 
 --// Code --//
+
+
+
+
 
 local Connections = {}
 
@@ -85,7 +89,7 @@ local function Drop(Type)
 	if Type == true and CmdSettings["Dropping"] == nil then
 		CmdSettings["Dropping"] = true
 		CmdSettings["CustomDrop"] = nil
-		CmdSettings["Aura"] = nil
+		CmdSettings["Dupe"] = nil
 		while CmdSettings["Dropping"] do
 			local args = {
 				[1] = "DropMoney",
@@ -134,7 +138,7 @@ local function GetPlayerFromString(str,ignore)
 end
 local function BringPlr(Target,POS)
 	if getgenv().PointInTable == 1 and Target.Character and Target.Character:FindFirstChild("Humanoid") then
-		CmdSettings["Aura"] = nil
+		CmdSettings["Dupe"] = nil
 
 		local TargetPlr = Target
 
@@ -206,8 +210,7 @@ end
 local BringLocations = {
 	["bank"] = CFrame.new(-396.988922, 21.7570763, -293.929779, -0.102468058, -1.9584887e-09, -0.994736314, 7.23731564e-09, 1, -2.71436984e-09, 0.994736314, -7.47735651e-09, -0.102468058),
 	["admin"] = CFrame.new(-872.453674, -32.6421318, -532.476379, 0.999682248, -1.36019978e-08, 0.0252073351, 1.33811247e-08, 1, 8.93094043e-09, -0.0252073351, -8.59080007e-09, 0.999682248),
-	["klub"] = CFrame.new(-264.434479, 0.0355005264, -430.854736, -0.999828756, 9.58909574e-09, -0.0185054261, 9.92017934e-09, 1, -1.77993904e-08, 0.0185054261, -1.79799198e-08, -0.999828756),	
-	["vault"] = CFrame.new(-495.485901, 23.1428547, -284.661713, -0.0313318223, -4.10440322e-08, 0.999509037, 2.18453966e-08, 1, 4.17489829e-08, -0.999509037, 2.31427428e-08, -0.0313318223),
+	["Club"] = CFrame.new(-264.434479, 0.0355005264, -430.854736, -0.999828756, 9.58909574e-09, -0.0185054261, 9.92017934e-09, 1, -1.77993904e-08, 0.0185054261, -1.79799198e-08, -0.999828756),	
 	["train"] = CFrame.new(591.396118, 34.5070686, -146.159561, 0.0698467195, -4.91725913e-08, -0.997557759, 5.03374231e-08, 1, -4.57684664e-08, 0.997557759, -4.70177071e-08, 0.0698467195),	
 }
 
@@ -226,21 +229,14 @@ local SetupsTable = {
 		PerRow = 10,
 		Rows = 4,
 	},
-	Klub = {
+	Club = {
 		Origin = CFrame.new(-237.016571, -4.87585974, -411.940063, 0.994918466, -1.5840282e-08, -0.100683607, 6.8329018e-09, 1, -8.9807088e-08, 0.100683607, 8.86627731e-08, 0.994918466),
 		ZMultiplier = 6,
 		XMultiplier = -12,
 		PerRow = 10,
 		Rows = 4,
 	},
-	Vault = {
-		Origin = CFrame.new(-519.201355, 23.1994667, -292.362, -0.0597927198, 6.70288927e-08, -0.998210788, 2.96872589e-08, 1, 6.53707701e-08, 0.998210788, -2.57254467e-08, -0.0597927198),
-		ZMultiplier = -2.5,
-		XMultiplier = 4,
-		PerRow = 10,
-		Rows = 4,
-	},
-	Train = {
+		Train = {
 		Origin = CFrame.new(606.527588, 34.5070801, -159.083542, 0.0376962014, -7.60452892e-08, 0.999289274, 6.54496404e-08, 1, 7.36304173e-08, -0.999289274, 6.26275352e-08, 0.0376962014),
 		ZMultiplier = 5,
 		XMultiplier = -7,
@@ -249,7 +245,7 @@ local SetupsTable = {
 	}
 }
 local function Setup(Type,Debugmode)
-	CmdSettings["Aura"] = nil
+	CmdSettings["Dupe"] = nil
 	if Debugmode then
 		for PointInTable = 1,40 do
 			local Table = SetupsTable[Type]
@@ -393,12 +389,12 @@ local function Initiate()
 				end
 			elseif Message == ".ad off" then				
 				CmdSettings["AdOn"] = nil
-			elseif Message == ".loopdel" then
+			elseif Message == ".loopdestroy" then
 				if DropFolder then
 					DropFolder:Destroy()
 					DropFolder = nil
 				end
-			elseif Message == ".circle host" and Host and Host.Character and Host.Character:FindFirstChild("Humanoid") and Host.Character.Humanoid.Health > 0 then
+			elseif Message == ".surround" and Host and Host.Character and Host.Character:FindFirstChild("Humanoid") and Host.Character.Humanoid.Health > 0 then
 				local angle = 0
 				local cfr = Host.Character.HumanoidRootPart.CFrame*CFrame.new(0,1,0)
 				local Index = 0
@@ -439,13 +435,13 @@ local function Initiate()
 						CmdSettings[Var] = nil
 					end
 					CmdSettings = {}
-					setfpscap(60)
+					setfpscap(30)
 					wait(1)
-					setfpscap(60)
+					setfpscap(30)
 					wait(1)
-					setfpscap(60)
+					setfpscap(30)
 					wait(1)
-					setfpscap(60)	
+					setfpscap(30)	
 				end
 			elseif Args[1] == ".crash" and Args[2] == "encrypt" and not Crashed then
 				local Player = GetPlayerFromString(Args[3],true)
@@ -461,13 +457,13 @@ local function Initiate()
 						CmdSettings[Var] = nil
 					end
 					CmdSettings = {}
-					setfpscap(60)
+					setfpscap(30)
 					wait(1)
-					setfpscap(60)
+					setfpscap(30)
 					wait(1)
-					setfpscap(60)
+					setfpscap(30)
 					wait(1)
-					setfpscap(60)	
+					setfpscap(30)	
 				end
 			elseif Args[1] == ".crash" and Args[2] == "15min" and not Crashed then
 				local Player = GetPlayerFromString(Args[3],true)
@@ -483,15 +479,15 @@ local function Initiate()
 						CmdSettings[Var] = nil
 					end
 					CmdSettings = {}
-					setfpscap(60)
+					setfpscap(30)
 					wait(1)
-					setfpscap(60)
+					setfpscap(5)
 					wait(1)
-					setfpscap(60)
+					setfpscap(5)
 					wait(1)
-					setfpscap(60)	
+					setfpscap(5)	
 				end
-			elseif Args[1] == ".stopdrop" then
+			elseif Args[1] == ".stop" then
 				Drop(false)
 			elseif Args[1] == ".reset" then
 				if Variables["Player"].Character then
@@ -528,57 +524,15 @@ local function Initiate()
 				Setup("Bank")
 			elseif Message == ".setup admin" then
 				Setup("Admin")
-			elseif Message == ".setup klub" then
-				Setup("Klub")
-			elseif Message == ".setup vault" then
-				Setup("Vault")
+			elseif Message == ".setup club" then
+				Setup("Club")
 			elseif Message == ".setup train" then
 				Setup("Train")
-			elseif Message == ".wallet on" then
+			elseif Message == ".wallet" then
 				ShowWallet()
-			elseif Message == ".wallet off" then
+			elseif Message == ".unwalletf" then
 				RemoveWallet()
-			elseif Message == ".dolphin" then
-				if CurrAnim and CurrAnim.IsPlaying then
-					CurrAnim:Stop()
-				end
-				local Anim = Instance.new("Animation")
-				Anim.AnimationId = "http://www.roblox.com/asset/?id=5918726674"
-				CurrAnim = game.Players.LocalPlayer.Character.Humanoid.Animator:LoadAnimation(Anim)
-				CurrAnim:Play()
-				CurrAnim:AdjustSpeed()
-			elseif Message == ".monkey" then
-				if CurrAnim and CurrAnim.IsPlaying then
-					CurrAnim:Stop()
-				end
-				local Anim = Instance.new("Animation")
-				Anim.AnimationId = "http://www.roblox.com/asset/?id=3333499508"
-				CurrAnim = game.Players.LocalPlayer.Character.Humanoid.Animator:LoadAnimation(Anim)
-				CurrAnim:Play()
-				CurrAnim:AdjustSpeed()
-			elseif Message == ".floss" then
-				if CurrAnim and CurrAnim.IsPlaying then
-					CurrAnim:Stop()
-				end
-				local Anim = Instance.new("Animation")
-				Anim.AnimationId = "http://www.roblox.com/asset/?id=5917459365"
-				CurrAnim = game.Players.LocalPlayer.Character.Humanoid.Animator:LoadAnimation(Anim)
-				CurrAnim:Play()
-				CurrAnim:AdjustSpeed()
-			elseif Message == ".shuffle" then
-				if CurrAnim and CurrAnim.IsPlaying then
-					CurrAnim:Stop()
-				end
-				local Anim = Instance.new("Animation")
-				Anim.AnimationId = "http://www.roblox.com/asset/?id=4349242221"
-				CurrAnim = game.Players.LocalPlayer.Character.Humanoid.Animator:LoadAnimation(Anim)
-				CurrAnim:Play()
-				CurrAnim:AdjustSpeed()
-			elseif Message == ".stopdance" then
-				if CurrAnim and CurrAnim.IsPlaying then
-					CurrAnim:Stop()
-				end
-			elseif Message == ".maskon" then
+		            elseif Message == ".maskon" then
 				local plr = game.Players.LocalPlayer
 				local c = plr.Character
 				local Root = c.PrimaryPart
@@ -608,21 +562,21 @@ local function Initiate()
 				elseif c:FindFirstChild("Mask") then
 					c.Mask:Activate()
 				end
-			elseif Args[1] == ".aura" then
+			elseif Args[1] == ".dupe" then
 				local Player = GetPlayerFromString(Args[2],true)
 				if Player and Player == game.Players.LocalPlayer then
-					if CmdSettings["Aura"] == nil then
+					if CmdSettings["Dupe"] == nil then
 						print("Enabled!")
-						CmdSettings["Aura"] = true
+						CmdSettings["Dupe"] = true
 						CmdSettings["Dropping"] = nil
 						CmdSettings["CustomDrop"] = nil
 
-						while CmdSettings["Aura"] == true and DropFolder do
+						while CmdSettings["Dupe"] == true and DropFolder do
 							if DropFolder then
 								for i,v in pairs(DropFolder:GetChildren()) do
 									if v:IsA("BasePart") and v.Name == "MoneyDrop" then
 										if (v.Position-game.Players.LocalPlayer.Character.HumanoidRootPart.Position).magnitude <= 12 then
-											if CmdSettings["Aura"] == true then
+											if CmdSettings["Dupe"] == true then
 												fireclickdetector(v.ClickDetector)
 											end
 											wait(0.2)
@@ -634,12 +588,12 @@ local function Initiate()
 						end
 					end
 				end
-			elseif Args[1] == ".stopaura" then
-				CmdSettings["Aura"] = nil
+			elseif Args[1] == ".stopdupe" then
+				CmdSettings["Dupe"] = nil
 			elseif Args[1] == ".cdrop" and Args[2] ~= nil and not CmdSettings["CustomDrop"] then
 				local Number = GetNumberFromText(Args[2]) 
 				if Number and DropFolder then
-					CmdSettings["Aura"] = nil
+					CmdSettings["Dupe"] = nil
 					CmdSettings["Dropping"] = false
 
 					local OldMoney = 0
@@ -693,3 +647,23 @@ Services["Players"].PlayerAdded:Connect(function(Player)
 		Initiate()
 	end
 end)
+
+ImageLabel.Parent = Frame
+ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ImageLabel.BackgroundTransparency = 1.000
+ImageLabel.Position = UDim2.new(0.311862051, 0, 0.329323083, 0)
+ImageLabel.Size = UDim2.new(0, 100, 0, 100)
+ImageLabel.Image = "rbxasset://textures/ui/GuiImagePlaceholder.png"
+ local Players = game:GetService("Players")
+    
+    local player = Players.LocalPlayer
+    
+    local userId = player.UserId
+    local thumbType = Enum.ThumbnailType.HeadShot
+    local thumbSize = Enum.ThumbnailSize.Size420x420
+    local content, isReady = Players:GetUserThumbnailAsync(userId, thumbType, thumbSize)
+    
+    local imageLabel = script.Parent
+    imageLabel.Image = content
+    
+end
