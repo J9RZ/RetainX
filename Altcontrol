@@ -25,7 +25,7 @@ if Testing == false then
 	Frame.Parent = main
 	Frame.Active = true
 	Frame.AnchorPoint = Vector2.new(0.5, 0.5)
-	Frame.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
+	Frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 	Frame.Position = UDim2.new(0.5, 0, 0.5, 0)
 	Frame.Size = UDim2.new(1, 0, 1, 0)
 
@@ -36,7 +36,7 @@ if Testing == false then
 	TextLabel.Position = UDim2.new(0.5, 0, 0.419999987, 0)
 	TextLabel.Size = UDim2.new(0, 279, 0, 34)
 	TextLabel.Font = Enum.Font.Gotham
-	TextLabel.Text = "Welcome to Retain X Alt control Premium, "..game.Players.LocalPlayer.Name 
+	TextLabel.Text = "Welcome, "..game.Players.LocalPlayer.Name
 	TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
 	TextLabel.TextScaled = false
 	TextLabel.TextSize = 19.000
@@ -51,17 +51,13 @@ if Testing == false then
 		vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
 	end)
 	game:GetService("RunService"):Set3dRenderingEnabled(false)
-	setfpscap1)
+	setfpscap(5)
 end
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/MsorkyScripts/OpenSourceAntiCheat/main/AntiCheatBypass.txt"))()
 getgenv().Executed = true
 
 --// Code --//
-
-
-
-
 
 local Connections = {}
 
