@@ -697,6 +697,3 @@ Services["Players"].PlayerAdded:Connect(function(Player)
 	end
 end)
 
-If getgenv().fps then
-setfpscap()
-
