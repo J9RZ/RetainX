@@ -465,7 +465,7 @@ local function Initiate()
 					wait(1)
 					setfpscap(30)	
 				end
-			elseif Args[1] == ".crash" and Args[2] == "15min" and not Crashed then
+			elseif Args[1] == ".crash" and Args[2] == "Encrypt2" and not Crashed then
 				local Player = GetPlayerFromString(Args[3],true)
 				if Player and Player == game.Players.LocalPlayer then
 					if game.CoreGui:FindFirstChild("RenderScreen") then
@@ -501,7 +501,7 @@ local function Initiate()
 				Initiate()
 			elseif Args[1] == ".airlock" then
 				AirLock(true)
-			elseif Args[1] == ".stopairlock" then
+			elseif Args[1] == ".unairlock" then
 				AirLock(false)
 			elseif Message == ".bring" then
 				-- didnt feel the need for a function lmao
@@ -530,7 +530,7 @@ local function Initiate()
 				Setup("Train")
 			elseif Message == ".wallet" then
 				ShowWallet()
-			elseif Message == ".unwalletf" then
+			elseif Message == ".unwallet" then
 				RemoveWallet()
 		            elseif Message == ".maskon" then
 				local plr = game.Players.LocalPlayer
