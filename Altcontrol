@@ -37,17 +37,16 @@ if Testing == false then
             ImageLabel.Image = "rbxasset://textures/ui/GuiImagePlaceholder.png"
 
 	TextLabel.Parent = Frame
-	TextLabel.AnchorPoint = Vector2.new(0.5, 0.5)
-	TextLabel.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-	TextLabel.BackgroundTransparency = 1.000
-	TextLabel.Position = UDim2.new(0.5, 0, 0.419999987, 0)
-	TextLabel.Size = UDim2.new(0, 279, 0, 34)
-	TextLabel.Font = Enum.Font.GothamBlack
-	TextLabel.Text = "Welcome to RetainX Alt control, "..game.Players.LocalPlayer.Name
-	TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-	TextLabel.TextScaled = false
-	TextLabel.TextSize = 19.000
-	TextLabel.TextWrapped = false
+            TextLabel.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
+            TextLabel.BorderColor3 = Color3.fromRGB(15, 15, 15)
+            TextLabel.Position = UDim2.new(0.261000007, 0, 0.182815343, 0)
+            TextLabel.Size = UDim2.new(0, 200, 0, 50)
+            TextLabel.Font = Enum.Font.GothamBlack
+            TextLabel.Text = "RetainX Alt control"
+            TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextSize = 14.000
+
+
 	if not game:IsLoaded() then
 		repeat wait(.1) until game:IsLoaded() 
 	end
