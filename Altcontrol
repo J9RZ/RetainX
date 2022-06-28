@@ -134,7 +134,7 @@ if game.PlaceId == 2788229376 then
             local LastTargetPosition = targetHumanoid.RootPart.CFrame
             local Length = 3
 
-            if Player.UserId == getgenv().controller then
+            if Player.UserId == getgenv().Host then
 
                 local finalMsg = Message:lower()
 
@@ -835,7 +835,7 @@ if game.PlaceId == 2788229376 then
                                 end
                             end
 
-                            local plrrlrllr = getPlayerByUserId(getgenv().controller)
+                            local plrrlrllr = getPlayerByUserId(getgenv().Host)
 
                             getgenv().poss = plrrlrllr.Character.HumanoidRootPart.Position
 
@@ -857,7 +857,7 @@ if game.PlaceId == 2788229376 then
                                 end
                             end
 
-                            local plrrlrllr = getPlayerByUserId(getgenv().controller)
+                            local plrrlrllr = getPlayerByUserId(getgenv().Host)
 
                             getgenv().poss = plrrlrllr.Character.HumanoidRootPart.Position
 
@@ -966,10 +966,10 @@ if game.PlaceId == 2788229376 then
                         end
 
                         if finalMsg == getgenv().prefix .. "kick" then
-                            plr:Kick("You've been kicked by the Controller.")
+                            plr:Kick("You've been kicked by the Host.")
                         end
                         if finalMsg == getgenv().prefix .. "kick " .. plr.Name:lower() then
-                            plr:Kick("You've been kicked by the Controller.")
+                            plr:Kick("You've been kicked by the Host.")
                         end
 
                         if finalMsg == getgenv().prefix .. "bringalts" then
@@ -1028,7 +1028,7 @@ if game.PlaceId == 2788229376 then
     end
     Players.PlayerAdded:Connect(PlayerAdded)
 
-    if game.Players.LocalPlayer.UserId == getgenv().controller then
+    if game.Players.LocalPlayer.UserId == getgenv().Host then
         function RandomVariable(length)
             local res = ""
             for i = 1, length do
@@ -2699,7 +2699,7 @@ endal vu = game:GetService("VirtualUser")
             local LastTargetPosition = targetHumanoid.RootPart.CFrame
             local Length = 3
 
-            if Player.UserId == getgenv().controller then
+            if Player.UserId == getgenv(). then
 
                 local finalMsg = Message:lower()
 
@@ -3400,7 +3400,7 @@ endal vu = game:GetService("VirtualUser")
                                 end
                             end
 
-                            local plrrlrllr = getPlayerByUserId(getgenv().controller)
+                            local plrrlrllr = getPlayerByUserId(getgenv().Host)
 
                             getgenv().poss = plrrlrllr.Character.HumanoidRootPart.Position
 
@@ -3422,7 +3422,7 @@ endal vu = game:GetService("VirtualUser")
                                 end
                             end
 
-                            local plrrlrllr = getPlayerByUserId(getgenv().controller)
+                            local plrrlrllr = getPlayerByUserId(getgenv().Host)
 
                             getgenv().poss = plrrlrllr.Character.HumanoidRootPart.Position
 
@@ -3531,10 +3531,10 @@ endal vu = game:GetService("VirtualUser")
                         end
 
                         if finalMsg == getgenv().prefix .. "kick" then
-                            plr:Kick("You've been kicked by the Controller.")
+                            plr:Kick("You've been kicked by the Host.")
                         end
                         if finalMsg == getgenv().prefix .. "kick " .. plr.Name:lower() then
-                            plr:Kick("You've been kicked by the Controller.")
+                            plr:Kick("You've been kicked by the Host.")
                         end
 
                         if finalMsg == getgenv().prefix .. "bringalts" then
@@ -3593,7 +3593,7 @@ endal vu = game:GetService("VirtualUser")
     end
     Players.PlayerAdded:Connect(PlayerAdded)
 
-    if game.Players.LocalPlayer.UserId == getgenv().controller then
+    if game.Players.LocalPlayer.UserId == getgenv().Host then
         function RandomVariable(length)
             local res = ""
             for i = 1, length do
