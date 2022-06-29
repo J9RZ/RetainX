@@ -643,23 +643,3 @@ Services["Players"].PlayerAdded:Connect(function(Player)
 		Initiate()
 	end
 end)
-
-ImageLabel.Parent = Frame
-ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-ImageLabel.BackgroundTransparency = 1.000
-ImageLabel.Position = UDim2.new(0.311862051, 0, 0.329323083, 0)
-ImageLabel.Size = UDim2.new(0, 100, 0, 100)
-ImageLabel.Image = "rbxasset://textures/ui/GuiImagePlaceholder.png"
- local Players = game:GetService("Players")
-    
-    local player = Players.LocalPlayer
-    
-    local userId = player.UserId
-    local thumbType = Enum.ThumbnailType.HeadShot
-    local thumbSize = Enum.ThumbnailSize.Size420x420
-    local content, isReady = Players:GetUserThumbnailAsync(userId, thumbType, thumbSize)
-    
-    local imageLabel = script.Parent
-    imageLabel.Image = content
-    
-end
